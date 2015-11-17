@@ -43,8 +43,8 @@ if(!defined('YOURLS_ABSPATH'))die();
 if (!yourls_is_API()) {
     // Check if AbstractDefault class exists
     if(class_exists('Laemmi\Yourls\Plugin\AbstractDefault')) {
-        require_once 'lib/Plugin.php';
-        new Laemmi\Yourls\ForceSsl\Plugin();
+        require_once 'lib/Laemmi/Yourls/Plugin/ForceSsl/Plugin.php';
+        new Laemmi\Yourls\Plugin\ForceSsl\Plugin();
     } else {
         if('activate' === (isset($_GET['action']) ? $_GET['action'] : null) && 'laemmi-yourls-force-ssl' === $_GET['plugin']) {
             echo 'Please install "laemmi-yourls-default-tools" first!';

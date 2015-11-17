@@ -30,14 +30,14 @@
 /**
  * Namespace
  */
-namespace Laemmi\Yourls\ForceSsl;
+namespace Laemmi\Yourls\Plugin\ForceSsl;
 
 use Laemmi\Yourls\Plugin\AbstractDefault;
 
 /**
  * Class Plugin
  *
- * @package Laemmi\Yourls\Admin
+ * @package Laemmi\Yourls\Plugin\ForceSsl
  */
 class Plugin extends AbstractDefault
 {
@@ -65,7 +65,7 @@ class Plugin extends AbstractDefault
         }
 
         if($server_scheme !== $scheme) {
-            header("Location: " . $scheme . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . $_SERVER['QUERY_STRING']);
+            header("Location: " . $scheme . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . $_SERVER['QUERY_STRING'], true, 301);
             exit;
         }
     }
